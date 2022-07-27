@@ -1,20 +1,15 @@
 import type { NextPage } from "next";
-import { Amplify } from "aws-amplify";
-import awsconfig from "../src/aws-exports";
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-
-Amplify.configure(awsconfig);
+import { useRouter } from "next/dist/client/router";
 
 const Home: NextPage = () => {
+  const router = useRouter();
   return (
     <Authenticator>
-      {({ signOut, user }) => (
-        <main>
-          <h1>Hello {user?.username}</h1>
-          <button onClick={signOut}>Sign out</button>
-        </main>
-      )}
+      {({ signOut, user }) => {
+        router.push("/post");
+      }}
     </Authenticator>
   );
 };

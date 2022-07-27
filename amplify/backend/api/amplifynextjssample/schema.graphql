@@ -1,11 +1,10 @@
-type Post
-  @model
-{
+type Post @auth(rules: [{ allow: public }]) @model {
   id: ID!
   content: String!
   owner: String!
   image: String
-  status: PostStatus! @index(name: "SortByCreatedAt", sortKeyFields: ["createdAt"])
+  status: PostStatus!
+    @index(name: "SortByCreatedAt", sortKeyFields: ["createdAt"])
   comments: [Comment] @hasMany(fields: ["id"])
   createdAt: AWSDateTime
 }
@@ -15,9 +14,7 @@ enum PostStatus {
   unpublished
 }
 
-type Comment
-  @model
-{
+type Comment @auth(rules: [{ allow: public }]) @model {
   id: ID!
   postId: ID! @index(name: "byPost", sortKeyFields: ["content"])
   content: String!
