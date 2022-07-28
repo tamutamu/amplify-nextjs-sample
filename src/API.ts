@@ -186,6 +186,14 @@ export type ModelCommentFilterInput = {
   not?: ModelCommentFilterInput | null,
 };
 
+export type CommonValidatorMutationVariables = {
+  content: string,
+};
+
+export type CommonValidatorMutation = {
+  commonValidator?: string | null,
+};
+
 export type CreatePostMutationVariables = {
   input: CreatePostInput,
   condition?: ModelPostConditionInput | null,

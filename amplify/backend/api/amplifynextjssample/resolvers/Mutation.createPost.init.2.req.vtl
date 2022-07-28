@@ -1,0 +1,18 @@
+## [Start] Initialization default values. **
+$util.qr($ctx.stash.put("defaultValues", $util.defaultIfNull($ctx.stash.defaultValues, {})))
+#set( $createdAt = $util.time.nowISO8601() )
+$util.qr($ctx.stash.defaultValues.put("id", $util.autoId()))
+$util.qr($ctx.stash.defaultValues.put("createdAt", $createdAt))
+$util.qr($ctx.stash.defaultValues.put("updatedAt", $createdAt))
+$util.toJson({
+  "version": "2017-02-28",
+  "operation": "Invoke",
+  "payload": {
+    "type": "Mutation",
+    "field": "commonValidator",
+    "arguments": $utils.toJson($ctx.arguments),
+    "identity": $utils.toJson($ctx.identity),
+    "source": $utils.toJson($ctx.source)
+  }
+})
+## [End] Initialization default values. **

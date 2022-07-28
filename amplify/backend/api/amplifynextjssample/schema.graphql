@@ -21,3 +21,9 @@ type Comment @auth(rules: [{ allow: public }]) @model {
   owner: String!
   post: Post @belongsTo(fields: ["postId"])
 }
+
+type Mutation {
+  commonValidator(content: String!): String
+    @function(name: "commonValidator-${env}")
+    @auth(rules: [{ allow: public }])
+}

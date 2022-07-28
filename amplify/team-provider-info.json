@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "amplifynextjssample88ef554d": {}
+      },
+      "function": {
+        "commonValidator": {
+          "deploymentBucketName": "amplify-amplifynextjssample-dev-205331-deployment",
+          "s3Key": "amplify-builds/commonValidator-334e6273493079484454-build.zip"
+        }
       }
     }
   }
