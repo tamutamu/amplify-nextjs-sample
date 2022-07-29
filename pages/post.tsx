@@ -8,9 +8,12 @@ import { createPost } from "../src/graphql/mutations";
 
 const Post: NextPage = () => {
   const [content, setContent] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
   const handleCreatePost = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setMessage("更新中");
 
     const user = (await Auth.currentAuthenticatedUser()) as CognitoUser;
 
@@ -27,8 +30,10 @@ const Post: NextPage = () => {
         graphqlOperation(createPost, { input: data })
       );
       setContent("");
+      setMessage("OK");
     } catch (err: any) {
       console.log(err);
+      setMessage(err.errors[0].message);
     }
   };
 
@@ -43,6 +48,7 @@ const Post: NextPage = () => {
         />
         <button type="submit">Post</button>
       </form>
+      <div>{message}</div>
     </>
   );
 };
