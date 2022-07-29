@@ -23,7 +23,9 @@ const Post: NextPage = () => {
     };
 
     try {
-      await API.graphql(graphqlOperation(createPost, { input: data }));
+      const ret = await API.graphql(
+        graphqlOperation(createPost, { input: data })
+      );
       setContent("");
     } catch (err: any) {
       console.log(err);
