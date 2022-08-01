@@ -9,8 +9,9 @@ export function override(resources: AmplifyApiGraphQlResourceStackTemplate) {
     //   console.log(functionKey);
     //   console.log(model.appsyncFunctions);
     //   console.log(model.appsyncFunctions[functionKey]);
-
-    model.appsyncFunctions[functionKey].dataSourceName =
-      "CommonValidatorLambdaDataSource";
+    if (model.appsyncFunctions) {
+      model.appsyncFunctions[functionKey].dataSourceName =
+        "CommonValidatorLambdaDataSource";
+    }
   }
 }
