@@ -1,4 +1,6 @@
-type Post @auth(rules: [{ allow: public }]) @model {
+type Post
+  @auth(rules: [{ allow: owner, operations: [create, delete, update, read] }])
+  @model {
   id: ID!
   content: String!
   owner: String!
@@ -14,7 +16,9 @@ enum PostStatus {
   unpublished
 }
 
-type Comment @auth(rules: [{ allow: public }]) @model {
+type Comment
+  @auth(rules: [{ allow: owner, operations: [create, delete, update, read] }])
+  @model {
   id: ID!
   postId: ID! @index(name: "byPost", sortKeyFields: ["content"])
   content: String!

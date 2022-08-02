@@ -2,11 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const commonValidator = /* GraphQL */ `
-  mutation CommonValidator($content: String!) {
-    commonValidator(content: $content)
-  }
-`;
 export const createPost = /* GraphQL */ `
   mutation CreatePost(
     $input: CreatePostInput!
@@ -167,5 +162,10 @@ export const deleteComment = /* GraphQL */ `
       createdAt
       updatedAt
     }
+  }
+`;
+export const commonValidator = /* GraphQL */ `
+  mutation CommonValidator($content: String!) {
+    commonValidator(content: $content)
   }
 `;

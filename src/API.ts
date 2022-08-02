@@ -186,14 +186,6 @@ export type ModelCommentFilterInput = {
   not?: ModelCommentFilterInput | null,
 };
 
-export type CommonValidatorMutationVariables = {
-  content: string,
-};
-
-export type CommonValidatorMutation = {
-  commonValidator?: string | null,
-};
-
 export type CreatePostMutationVariables = {
   input: CreatePostInput,
   condition?: ModelPostConditionInput | null,
@@ -380,6 +372,14 @@ export type DeleteCommentMutation = {
   } | null,
 };
 
+export type CommonValidatorMutationVariables = {
+  content: string,
+};
+
+export type CommonValidatorMutation = {
+  commonValidator?: string | null,
+};
+
 export type GetPostQueryVariables = {
   id: string,
 };
@@ -499,6 +499,10 @@ export type ListCommentsQuery = {
   } | null,
 };
 
+export type OnCreatePostSubscriptionVariables = {
+  owner?: string | null,
+};
+
 export type OnCreatePostSubscription = {
   onCreatePost?:  {
     __typename: "Post",
@@ -523,6 +527,10 @@ export type OnCreatePostSubscription = {
     createdAt?: string | null,
     updatedAt: string,
   } | null,
+};
+
+export type OnUpdatePostSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnUpdatePostSubscription = {
@@ -551,6 +559,10 @@ export type OnUpdatePostSubscription = {
   } | null,
 };
 
+export type OnDeletePostSubscriptionVariables = {
+  owner?: string | null,
+};
+
 export type OnDeletePostSubscription = {
   onDeletePost?:  {
     __typename: "Post",
@@ -575,6 +587,10 @@ export type OnDeletePostSubscription = {
     createdAt?: string | null,
     updatedAt: string,
   } | null,
+};
+
+export type OnCreateCommentSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnCreateCommentSubscription = {
@@ -603,6 +619,10 @@ export type OnCreateCommentSubscription = {
   } | null,
 };
 
+export type OnUpdateCommentSubscriptionVariables = {
+  owner?: string | null,
+};
+
 export type OnUpdateCommentSubscription = {
   onUpdateComment?:  {
     __typename: "Comment",
@@ -627,6 +647,10 @@ export type OnUpdateCommentSubscription = {
     createdAt: string,
     updatedAt: string,
   } | null,
+};
+
+export type OnDeleteCommentSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnDeleteCommentSubscription = {

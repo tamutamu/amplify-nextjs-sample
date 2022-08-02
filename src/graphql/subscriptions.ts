@@ -3,8 +3,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost {
-    onCreatePost {
+  subscription OnCreatePost($owner: String) {
+    onCreatePost(owner: $owner) {
       id
       content
       owner
@@ -27,8 +27,8 @@ export const onCreatePost = /* GraphQL */ `
   }
 `;
 export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost {
-    onUpdatePost {
+  subscription OnUpdatePost($owner: String) {
+    onUpdatePost(owner: $owner) {
       id
       content
       owner
@@ -51,8 +51,8 @@ export const onUpdatePost = /* GraphQL */ `
   }
 `;
 export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost {
-    onDeletePost {
+  subscription OnDeletePost($owner: String) {
+    onDeletePost(owner: $owner) {
       id
       content
       owner
@@ -75,8 +75,8 @@ export const onDeletePost = /* GraphQL */ `
   }
 `;
 export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment {
-    onCreateComment {
+  subscription OnCreateComment($owner: String) {
+    onCreateComment(owner: $owner) {
       id
       postId
       content
@@ -99,8 +99,8 @@ export const onCreateComment = /* GraphQL */ `
   }
 `;
 export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment {
-    onUpdateComment {
+  subscription OnUpdateComment($owner: String) {
+    onUpdateComment(owner: $owner) {
       id
       postId
       content
@@ -123,8 +123,8 @@ export const onUpdateComment = /* GraphQL */ `
   }
 `;
 export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment {
-    onDeleteComment {
+  subscription OnDeleteComment($owner: String) {
+    onDeleteComment(owner: $owner) {
       id
       postId
       content
