@@ -164,6 +164,45 @@ export const deleteComment = /* GraphQL */ `
     }
   }
 `;
+export const createProcessLock = /* GraphQL */ `
+  mutation CreateProcessLock(
+    $input: CreateProcessLockInput!
+    $condition: ModelProcessLockConditionInput
+  ) {
+    createProcessLock(input: $input, condition: $condition) {
+      processType
+      startDateTime
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateProcessLock = /* GraphQL */ `
+  mutation UpdateProcessLock(
+    $input: UpdateProcessLockInput!
+    $condition: ModelProcessLockConditionInput
+  ) {
+    updateProcessLock(input: $input, condition: $condition) {
+      processType
+      startDateTime
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteProcessLock = /* GraphQL */ `
+  mutation DeleteProcessLock(
+    $input: DeleteProcessLockInput!
+    $condition: ModelProcessLockConditionInput
+  ) {
+    deleteProcessLock(input: $input, condition: $condition) {
+      processType
+      startDateTime
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const commonValidator = /* GraphQL */ `
   mutation CommonValidator($content: String!) {
     commonValidator(content: $content)

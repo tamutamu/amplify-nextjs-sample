@@ -2,7 +2,7 @@
   "AppSyncApiName": "amplifynextjssample",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-08-01T14:32:08.256Z",
+  "AuthModeLastUpdated": "2022-08-03T02:40:30.353Z",
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
       "authamplifynextjssample88ef554d",

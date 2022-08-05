@@ -158,6 +158,35 @@ export type DeleteCommentInput = {
   id: string,
 };
 
+export type CreateProcessLockInput = {
+  processType: string,
+  startDateTime: string,
+};
+
+export type ModelProcessLockConditionInput = {
+  startDateTime?: ModelStringInput | null,
+  and?: Array< ModelProcessLockConditionInput | null > | null,
+  or?: Array< ModelProcessLockConditionInput | null > | null,
+  not?: ModelProcessLockConditionInput | null,
+};
+
+export type ProcessLock = {
+  __typename: "ProcessLock",
+  processType: string,
+  startDateTime: string,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateProcessLockInput = {
+  processType: string,
+  startDateTime?: string | null,
+};
+
+export type DeleteProcessLockInput = {
+  processType: string,
+};
+
 export type ModelPostFilterInput = {
   id?: ModelIDInput | null,
   content?: ModelStringInput | null,
@@ -184,6 +213,26 @@ export type ModelCommentFilterInput = {
   and?: Array< ModelCommentFilterInput | null > | null,
   or?: Array< ModelCommentFilterInput | null > | null,
   not?: ModelCommentFilterInput | null,
+};
+
+export type ModelProcessLockFilterInput = {
+  processType?: ModelStringInput | null,
+  startDateTime?: ModelStringInput | null,
+  and?: Array< ModelProcessLockFilterInput | null > | null,
+  or?: Array< ModelProcessLockFilterInput | null > | null,
+  not?: ModelProcessLockFilterInput | null,
+};
+
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
+
+export type ModelProcessLockConnection = {
+  __typename: "ModelProcessLockConnection",
+  items:  Array<ProcessLock | null >,
+  nextToken?: string | null,
 };
 
 export type CreatePostMutationVariables = {
@@ -372,6 +421,51 @@ export type DeleteCommentMutation = {
   } | null,
 };
 
+export type CreateProcessLockMutationVariables = {
+  input: CreateProcessLockInput,
+  condition?: ModelProcessLockConditionInput | null,
+};
+
+export type CreateProcessLockMutation = {
+  createProcessLock?:  {
+    __typename: "ProcessLock",
+    processType: string,
+    startDateTime: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateProcessLockMutationVariables = {
+  input: UpdateProcessLockInput,
+  condition?: ModelProcessLockConditionInput | null,
+};
+
+export type UpdateProcessLockMutation = {
+  updateProcessLock?:  {
+    __typename: "ProcessLock",
+    processType: string,
+    startDateTime: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteProcessLockMutationVariables = {
+  input: DeleteProcessLockInput,
+  condition?: ModelProcessLockConditionInput | null,
+};
+
+export type DeleteProcessLockMutation = {
+  deleteProcessLock?:  {
+    __typename: "ProcessLock",
+    processType: string,
+    startDateTime: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
 export type CommonValidatorMutationVariables = {
   content: string,
 };
@@ -499,8 +593,40 @@ export type ListCommentsQuery = {
   } | null,
 };
 
-export type OnCreatePostSubscriptionVariables = {
-  owner?: string | null,
+export type GetProcessLockQueryVariables = {
+  processType: string,
+};
+
+export type GetProcessLockQuery = {
+  getProcessLock?:  {
+    __typename: "ProcessLock",
+    processType: string,
+    startDateTime: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListProcessLocksQueryVariables = {
+  processType?: string | null,
+  filter?: ModelProcessLockFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListProcessLocksQuery = {
+  listProcessLocks?:  {
+    __typename: "ModelProcessLockConnection",
+    items:  Array< {
+      __typename: "ProcessLock",
+      processType: string,
+      startDateTime: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
 };
 
 export type OnCreatePostSubscription = {
@@ -529,10 +655,6 @@ export type OnCreatePostSubscription = {
   } | null,
 };
 
-export type OnUpdatePostSubscriptionVariables = {
-  owner?: string | null,
-};
-
 export type OnUpdatePostSubscription = {
   onUpdatePost?:  {
     __typename: "Post",
@@ -557,10 +679,6 @@ export type OnUpdatePostSubscription = {
     createdAt?: string | null,
     updatedAt: string,
   } | null,
-};
-
-export type OnDeletePostSubscriptionVariables = {
-  owner?: string | null,
 };
 
 export type OnDeletePostSubscription = {
@@ -589,10 +707,6 @@ export type OnDeletePostSubscription = {
   } | null,
 };
 
-export type OnCreateCommentSubscriptionVariables = {
-  owner?: string | null,
-};
-
 export type OnCreateCommentSubscription = {
   onCreateComment?:  {
     __typename: "Comment",
@@ -617,10 +731,6 @@ export type OnCreateCommentSubscription = {
     createdAt: string,
     updatedAt: string,
   } | null,
-};
-
-export type OnUpdateCommentSubscriptionVariables = {
-  owner?: string | null,
 };
 
 export type OnUpdateCommentSubscription = {
@@ -649,10 +759,6 @@ export type OnUpdateCommentSubscription = {
   } | null,
 };
 
-export type OnDeleteCommentSubscriptionVariables = {
-  owner?: string | null,
-};
-
 export type OnDeleteCommentSubscription = {
   onDeleteComment?:  {
     __typename: "Comment",
@@ -674,6 +780,36 @@ export type OnDeleteCommentSubscription = {
       createdAt?: string | null,
       updatedAt: string,
     } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateProcessLockSubscription = {
+  onCreateProcessLock?:  {
+    __typename: "ProcessLock",
+    processType: string,
+    startDateTime: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateProcessLockSubscription = {
+  onUpdateProcessLock?:  {
+    __typename: "ProcessLock",
+    processType: string,
+    startDateTime: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteProcessLockSubscription = {
+  onDeleteProcessLock?:  {
+    __typename: "ProcessLock",
+    processType: string,
+    startDateTime: string,
     createdAt: string,
     updatedAt: string,
   } | null,

@@ -3,8 +3,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost($owner: String) {
-    onCreatePost(owner: $owner) {
+  subscription OnCreatePost {
+    onCreatePost {
       id
       content
       owner
@@ -27,8 +27,8 @@ export const onCreatePost = /* GraphQL */ `
   }
 `;
 export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost($owner: String) {
-    onUpdatePost(owner: $owner) {
+  subscription OnUpdatePost {
+    onUpdatePost {
       id
       content
       owner
@@ -51,8 +51,8 @@ export const onUpdatePost = /* GraphQL */ `
   }
 `;
 export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost($owner: String) {
-    onDeletePost(owner: $owner) {
+  subscription OnDeletePost {
+    onDeletePost {
       id
       content
       owner
@@ -75,8 +75,8 @@ export const onDeletePost = /* GraphQL */ `
   }
 `;
 export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment($owner: String) {
-    onCreateComment(owner: $owner) {
+  subscription OnCreateComment {
+    onCreateComment {
       id
       postId
       content
@@ -99,8 +99,8 @@ export const onCreateComment = /* GraphQL */ `
   }
 `;
 export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment($owner: String) {
-    onUpdateComment(owner: $owner) {
+  subscription OnUpdateComment {
+    onUpdateComment {
       id
       postId
       content
@@ -123,8 +123,8 @@ export const onUpdateComment = /* GraphQL */ `
   }
 `;
 export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment($owner: String) {
-    onDeleteComment(owner: $owner) {
+  subscription OnDeleteComment {
+    onDeleteComment {
       id
       postId
       content
@@ -141,6 +141,36 @@ export const onDeleteComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateProcessLock = /* GraphQL */ `
+  subscription OnCreateProcessLock {
+    onCreateProcessLock {
+      processType
+      startDateTime
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateProcessLock = /* GraphQL */ `
+  subscription OnUpdateProcessLock {
+    onUpdateProcessLock {
+      processType
+      startDateTime
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteProcessLock = /* GraphQL */ `
+  subscription OnDeleteProcessLock {
+    onDeleteProcessLock {
+      processType
+      startDateTime
       createdAt
       updatedAt
     }

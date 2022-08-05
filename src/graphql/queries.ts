@@ -101,3 +101,38 @@ export const listComments = /* GraphQL */ `
     }
   }
 `;
+export const getProcessLock = /* GraphQL */ `
+  query GetProcessLock($processType: String!) {
+    getProcessLock(processType: $processType) {
+      processType
+      startDateTime
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listProcessLocks = /* GraphQL */ `
+  query ListProcessLocks(
+    $processType: String
+    $filter: ModelProcessLockFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listProcessLocks(
+      processType: $processType
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        processType
+        startDateTime
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

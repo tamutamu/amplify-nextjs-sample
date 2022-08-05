@@ -19,6 +19,10 @@
         "commonValidator": {
           "deploymentBucketName": "amplify-amplifynextjssample-dev-205331-deployment",
           "s3Key": "amplify-builds/commonValidator-597a3975434e52375579-build.zip"
+        },
+        "graphQlLambdaAuthorizerd2160333": {
+          "deploymentBucketName": "amplify-amplifynextjssample-dev-205331-deployment",
+          "s3Key": "amplify-builds/graphQlLambdaAuthorizerd2160333-6830546b42784f4e5735-build.zip"
         }
       }
     }
