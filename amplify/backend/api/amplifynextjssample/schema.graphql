@@ -1,3 +1,14 @@
+type Mutation {
+  commonValidator(content: String!): String
+    @function(name: "commonValidator-${env}")
+    @auth(rules: [{ allow: public }])
+}
+
+type ProcessLock @auth(rules: [{ allow: public }]) @model {
+  processType: String! @primaryKey
+  startDateTime: AWSDateTime!
+}
+
 type Post @auth(rules: [{ allow: custom }]) @model {
   id: ID!
   content: String!
@@ -20,15 +31,4 @@ type Comment @auth(rules: [{ allow: custom }]) @model {
   content: String!
   owner: String!
   post: Post @belongsTo(fields: ["postId"])
-}
-
-type Mutation {
-  commonValidator(content: String!): String
-    @function(name: "commonValidator-${env}")
-    @auth(rules: [{ allow: public }])
-}
-
-type ProcessLock @auth(rules: [{ allow: public }]) @model {
-  processType: String! @primaryKey
-  startDateTime: AWSDateTime!
 }
