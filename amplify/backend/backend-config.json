@@ -28,10 +28,6 @@
           "category": "auth",
           "resourceName": "amplifynextjssample88ef554d",
           "attributes": ["UserPoolId"]
-        },
-        {
-          "category": "function",
-          "resourceName": "commonValidator"
         }
       ],
       "output": {
