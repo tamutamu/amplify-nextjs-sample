@@ -51,6 +51,10 @@
         "graphQlLambdaAuthorizerd2160333": {
           "deploymentBucketName": "amplify-amplifynextjssample-testb-115230-deployment",
           "s3Key": "amplify-builds/graphQlLambdaAuthorizerd2160333-6830546b42784f4e5735-build.zip"
+        },
+        "backendApi": {
+          "deploymentBucketName": "amplify-amplifynextjssample-testb-115230-deployment",
+          "s3Key": "amplify-builds/backendApi-6163493241554a656764-build.zip"
         }
       }
     }

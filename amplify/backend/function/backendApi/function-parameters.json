@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "auth": {
+      "amplifynextjssample88ef554d": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "api": {
+      "amplifynextjssample": [
+        "Query",
+        "Mutation"
+      ]
+    },
+    "storage": {
+      "ProcessLock:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "Post:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "Comment:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
